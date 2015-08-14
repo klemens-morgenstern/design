@@ -215,6 +215,6 @@ Result:
 
 | Assertion | Result 	   |
 |-----------|--------------|
-| x == z    | [](succ.png) |
-| y == z    | [](succ.png) |
-| 0 == z	| [](succ.png) |
+| x == z    | ![](succ.png) |
+| y == z    | ![](succ.png) |
+| 0 == z    | ![](succ.png) |
