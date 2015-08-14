@@ -31,7 +31,7 @@ none -> exception ;
 overflow -> exception ;
 underflow -> exception ;
 edge[dir=none];
-node[labeljust="r"];
+node[labeljust="r" ];
 test1  [label="Testcase 1: Add zeros            ", group=tests];
 test2  [label="Testsequence 2: Add positives    ", group=tests];
 test2_1[label="  Teststep 2.1: No overflow      ", group=tests];
@@ -41,6 +41,19 @@ test3_1[label="  Teststep 3.1: No underflow     ", group=tests];
 test3_2[label="  Teststep 3.2: Underflow        ", group=tests];
 test4  [label="Testcase 4: Positive and negative", group=tests];
 test5  [label="Testcase 5: Negative and positive", group=tests];
+
+test1___res[label="", image="succ.png", group=test_res];
+test2___res[label="", image="succ.png", group=test_res];
+test2_1_res[label="", image="succ.png", group=test_res];
+test2_2_res[label="", image="succ.png", group=test_res];
+test3___res[label="", image="succ.png", group=test_res];
+test3_1_res[label="", image="succ.png", group=test_res];
+test3_2_res[label="", image="succ.png", group=test_res];
+test4___res[label="", image="fail.png", group=test_res];
+test5___res[label="", image="succ.png", group=test_res];
+
+
+
 node[shape=point,style="filled",fixedsize=true,width=0.15,height=0.15];
 test1_x_zero; test1_y_zero; test1_none;
 test2_x_pos; test2_y_pos; 
@@ -67,6 +80,8 @@ test3_2_x_pos[group=gx_pos]; test3_2_x_zero[group=gx_zero];
 testlow_x_pos[group=gx_pos]; testlow_x_zero[group=gx_zero];
 
 
+
+
 test1_x_neg  [group=gx_neg]; test1_y_pos  [group=gy_pos]; test1_y_zero  [group=gy_zero]; test1_y_neg  [group=gy_neg]; test1_none  [group=gnone]; test1_overflow  [group=goverflow];test1_underflow  [group=gunderflow];test1_right  [group=gright];
 test2_x_neg  [group=gx_neg]; test2_y_pos  [group=gy_pos]; test2_y_zero  [group=gy_zero]; test2_y_neg  [group=gy_neg]; test2_none  [group=gnone]; test2_overflow  [group=goverflow];test2_underflow  [group=gunderflow];test2_right  [group=gright];
 test2_1_x_neg[group=gx_neg]; test2_1_y_pos[group=gy_pos]; test2_1_y_zero[group=gy_zero]; test2_1_y_neg[group=gy_neg]; test2_1_none[group=gnone]; test2_1_overflow[group=goverflow];test2_1_underflow[group=gunderflow];test2_1_right[group=gright];
@@ -78,16 +93,20 @@ test3_1_x_neg[group=gx_neg]; test3_1_y_pos[group=gy_pos]; test3_1_y_zero[group=g
 test3_2_x_neg[group=gx_neg]; test3_2_y_pos[group=gy_pos]; test3_2_y_zero[group=gy_zero]; test3_2_y_neg[group=gy_neg]; test3_2_none[group=gnone]; test3_2_overflow[group=goverflow];test3_2_underflow[group=gunderflow];test3_2_right[group=gright];
 testlow_x_neg[group=gx_neg]; testlow_y_pos[group=gy_pos]; testlow_y_zero[group=gy_zero]; testlow_y_neg[group=gy_neg]; testlow_none[group=gnone]; testlow_overflow[group=goverflow];testlow_underflow[group=gunderflow];testlow_right[group=gright];
 
+
+
 edge[style=filled];
-{rank=same; test1  ->test1_x_pos  ->test1_x_zero  ->test1_x_neg  ->test1_y_pos  ->test1_y_zero  ->test1_y_neg  ->test1_none  ->test1_overflow  ->test1_underflow  ->test1_right  ;}
-{rank=same; test2  ->test2_x_pos  ->test2_x_zero  ->test2_x_neg  ->test2_y_pos  ->test2_y_zero  ->test2_y_neg  ->test2_none  ->test2_overflow  ->test2_underflow  ->test2_right  ;}
-{rank=same; test2_1->test2_1_x_pos->test2_1_x_zero->test2_1_x_neg->test2_1_y_pos->test2_1_y_zero->test2_1_y_neg->test2_1_none->test2_1_overflow->test2_1_underflow->test2_1_right;}
-{rank=same; test2_2->test2_2_x_pos->test2_2_x_zero->test2_2_x_neg->test2_2_y_pos->test2_2_y_zero->test2_2_y_neg->test2_2_none->test2_2_overflow->test2_2_underflow->test2_2_right;}
-{rank=same; test3  ->test3_x_pos  ->test3_x_zero  ->test3_x_neg  ->test3_y_pos  ->test3_y_zero  ->test3_y_neg  ->test3_none  ->test3_overflow  ->test3_underflow  ->test3_right  ;}
-{rank=same; test4  ->test4_x_pos  ->test4_x_zero  ->test4_x_neg  ->test4_y_pos  ->test4_y_zero  ->test4_y_neg  ->test4_none  ->test4_overflow  ->test4_underflow  ->test4_right  ;}
-{rank=same; test5  ->test5_x_pos  ->test5_x_zero  ->test5_x_neg  ->test5_y_pos  ->test5_y_zero  ->test5_y_neg  ->test5_none  ->test5_overflow  ->test5_underflow  ->test5_right  ;}
-{rank=same; test3_1->test3_1_x_pos->test3_1_x_zero->test3_1_x_neg->test3_1_y_pos->test3_1_y_zero->test3_1_y_neg->test3_1_none->test3_1_overflow->test3_1_underflow->test3_1_right;}
-{rank=same; test3_2->test3_2_x_pos->test3_2_x_zero->test3_2_x_neg->test3_2_y_pos->test3_2_y_zero->test3_2_y_neg->test3_2_none->test3_2_overflow->test3_2_underflow->test3_2_right;}
+
+
+{rank=same; test1  ->test1_x_pos  ->test1_x_zero  ->test1_x_neg  ->test1_y_pos  ->test1_y_zero  ->test1_y_neg  ->test1_none  ->test1_overflow  ->test1_underflow  ->test1_right  ->test1___res;}
+{rank=same; test2  ->test2_x_pos  ->test2_x_zero  ->test2_x_neg  ->test2_y_pos  ->test2_y_zero  ->test2_y_neg  ->test2_none  ->test2_overflow  ->test2_underflow  ->test2_right  ->test2___res;}
+{rank=same; test2_1->test2_1_x_pos->test2_1_x_zero->test2_1_x_neg->test2_1_y_pos->test2_1_y_zero->test2_1_y_neg->test2_1_none->test2_1_overflow->test2_1_underflow->test2_1_right->test2_1_res;}
+{rank=same; test2_2->test2_2_x_pos->test2_2_x_zero->test2_2_x_neg->test2_2_y_pos->test2_2_y_zero->test2_2_y_neg->test2_2_none->test2_2_overflow->test2_2_underflow->test2_2_right->test2_2_res;}
+{rank=same; test3  ->test3_x_pos  ->test3_x_zero  ->test3_x_neg  ->test3_y_pos  ->test3_y_zero  ->test3_y_neg  ->test3_none  ->test3_overflow  ->test3_underflow  ->test3_right  ->test3___res;}
+{rank=same; test4  ->test4_x_pos  ->test4_x_zero  ->test4_x_neg  ->test4_y_pos  ->test4_y_zero  ->test4_y_neg  ->test4_none  ->test4_overflow  ->test4_underflow  ->test4_right  ->test3_1_res;}
+{rank=same; test5  ->test5_x_pos  ->test5_x_zero  ->test5_x_neg  ->test5_y_pos  ->test5_y_zero  ->test5_y_neg  ->test5_none  ->test5_overflow  ->test5_underflow  ->test5_right  ->test3_2_res;}
+{rank=same; test3_1->test3_1_x_pos->test3_1_x_zero->test3_1_x_neg->test3_1_y_pos->test3_1_y_zero->test3_1_y_neg->test3_1_none->test3_1_overflow->test3_1_underflow->test3_1_right->test4___res;}
+{rank=same; test3_2->test3_2_x_pos->test3_2_x_zero->test3_2_x_neg->test3_2_y_pos->test3_2_y_zero->test3_2_y_neg->test3_2_none->test3_2_overflow->test3_2_underflow->test3_2_right->test5___res;}
 edge[style=invisible];
 {rank=same; testlow_x_pos->testlow_x_zero->testlow_x_neg->testlow_y_pos->testlow_y_zero->testlow_y_neg->testlow_none->testlow_overflow->testlow_underflow->testlow_right;}
 edge[style=filled];
