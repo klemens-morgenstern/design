@@ -29,7 +29,9 @@ The call trace will be optional and the functions defined above will be part of 
 
 ### Coverage
 
-Can be done via gcov, which is also readable by eclipse. Additionally it can be converted to a html by using lcov.
+When enabling the coverage settings in the gcc, it will create files which can be read by gcov. To allow this to work, while testing on an none-eabi device, the gdb running the test, will put breakpoints in the locations which try to create the files. The gdb will then write the content to be written to the console, where it can be put into the files, so a the normal behavious is emulated. 
+
+Additionally it can be converted to a html by using lcov.
 
 ![Icov example](https://qiaomuf.files.wordpress.com/2011/05/lcov_report1.jpg)
 
