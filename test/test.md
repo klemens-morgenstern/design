@@ -82,9 +82,19 @@ The GDB backend is used on remote tests. It will only have empty functions. Sinc
 
 The Json Backend is used when executing the test on a device which can create files. It skips the intermediate step of the GDB backend.
 
+
+### Empty Backend
+
+This backend generates no output, but it will analyze the test results. Hence it can give a boolean result of the test. This backend is used for a test on the buliding machine. It is made to be included into the CI system, to validate the build. 
+
 ## Example
 The names of the macros have no prefix, since the macros will only be included into one source file. A complex example using the cte functionality can be found [here](cte.md). Analogous the test can be used without a cte, though the syntax stays the same. 
 
 ## Requirements
 
 Requirements shall be created in the reqif format. This has a very poweful editor plugin for eclipse. Since it stores it's data in an xml format, it can be used efficently by a diff tool. So it can be stored in a repository. It can then be read by a converter tool, which generates an output which can be parsed by doxygen. Additionally export to latex shall be given.  
+
+# Status
+
+ - All functionality has a proof-of-concept
+ - Basic implementation of the C++-Test library.

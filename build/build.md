@@ -59,3 +59,9 @@ Gpio.A.Odr[5] = true;
 ``` 
 This also allows tests to analyze if the registers are accessed correctly, while ignoring the behaviour of the hardware register. That is, software errors can be analyzed much more effeciently. 
 
+
+# Status
+
+The current status of the library is this:
+ - Concept is proven to work
+ - None-eabi functionality works in boost.build
